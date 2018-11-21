@@ -1,6 +1,3 @@
-"""
-дано структуру даних знайти
-"""
 smth=[
     {
         "name":"Bob",
@@ -36,7 +33,10 @@ def age_max(smth,d,i):
     return age_max(smth,d,i+1)
 
 #dodaty ozinku s predmeta
-def add_mark(smth,name,disc,mark):
+def add_mark(smth):
+    name=input('name:')
+    disc=input('disc:')
+    mark=int(input('mark:'))
     for student in smth:
         if student["name"] == name:
             student["marks"][disc] = mark
@@ -49,6 +49,12 @@ def name_student(smth):
 
 d=[]
 print(max(age_max(smth,d,0)))
-print(add_mark(smth,'Boban','Math',80))
+print(add_mark(smth))
 name_student(smth)
+
+
+
+
+
+
 
