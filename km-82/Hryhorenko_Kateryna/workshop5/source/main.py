@@ -1,20 +1,12 @@
 """
 # Створити dataset та працювати з ним
-
 # Які продукти купляли усі покупці?
-
 # Як змінювалась ціна на яблука? (графік)
-
 # Скільки грошей витрачає кожний покупець на покупки? (графік)
-
 # Який найпопулярніший товар?
-
 # Якого товару було куплено найменше?
-
 # Який найдорожчий товар?
-
 # Якого товару, скільки покупців купляє? (графік)
-
 # Написати функціонал для додавання нових даних
 """
 #import plotly
@@ -103,6 +95,17 @@ def how_what(dict1,c):
     #diagram= go.Scatter(x=result,y=list1)
     #fig = go.Figure(data=[diagram])
     #plotly.offline.plot(fig, filename='how_who.html')
+
+def spending(dct,lst):
+    lst1=[]
+    lst2=[]
+    for i in range(2,7):
+        lst1.append(dct[c[i][0]][c[i][1]][c[i][2]])
+        lst2.append(lst1[i][1])
+    
+    #diagram= go.Scatter(x=list(dct.keys()),y=lst2)
+    #fig = go.Figure(data=[diagram])
+    #plotly.offline.plot(fig, filename='spending.html')
         
 f=open("orders.csv",encoding ='utf', newline= "")
 spys=f.readlines()
@@ -122,3 +125,4 @@ min_product(empty_dict,g)
 how_what(empty_dict,g)
 
 
+	
