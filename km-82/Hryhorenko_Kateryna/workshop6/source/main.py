@@ -20,21 +20,19 @@ def convert_str(s):
 
 from functools import reduce
 #writting file for working
-with open('los-angeles-international-airport-passenger-traffic-by-terminal.csv', encoding='utf-8') as f:
-    spys=f.readlines()
-    g=[]
-    for i in range (len(spys)):
-        g.append(spys[i].split(','))
-    print(g[5640:])
-    #result = reduce(add_dct,g[1000:], {})
-    #result2 = reduce(add_dct,g[1000:2000], {})
-    #result3 = reduce(add_dct,g[2000:3000], {})
-    #result4 = reduce(add_dct,g[3000:4000], {})
-    #result5 = reduce(add_dct,g[4000:5000], {})
-    #result6 = reduce(add_dct,g[5000:5600], {})
-    dct = reduce(add_dct,g[5600:5643], {})
+try:
+    with open('los-angeles-international-airport-passenger-traffic-by-terminal.csv', encoding='utf-8') as f:
+        spys=f.readlines()
+        g=[]
+        for i in range (len(spys)):
+            g.append(spys[i].split(','))
 
+        dct = reduce(add_dct,g[5600:5643], {})
 
+except IOError:
+    print('Error with file', IOError.errno, IOError.strerror)
+except ValueError:
+    print('Error in line', current_line, ValueError)
     
 
 terminals=[]
