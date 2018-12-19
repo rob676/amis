@@ -26,7 +26,7 @@ def product(smth,spysokEmail,c=0):
     print(smth[0][spysokEmail[0]]['person']['name'])#виводить ім'я людини
     listt=smth[0][spysokEmail[0]]['foods'].copy()
     rax=0
-    print('vkluchenya product')
+    print('vkluchenya product')#виводить продукти які купив користувач 
     for i in listt:
         kilk=0
         for j in range(len(listt[i])):
@@ -35,7 +35,7 @@ def product(smth,spysokEmail,c=0):
             d=list(listt.keys())
         print(d[rax],kilk)
         rax+=1
-    print('skilki vytratyv',c)
+    print('skilki vytratyv',c)#рахує скільки витратив користувач
     return product(smth[1:],spysokEmail[1:])
 
 spysokEmail=[]
